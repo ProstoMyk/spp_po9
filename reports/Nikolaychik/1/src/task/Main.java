@@ -34,11 +34,9 @@ public class Main {
 
     }
     public static void shiftRight(double[] array, int shift){
-        for(int i=0;i<shift;i++){
-            double temp=array[array.length-1];
-            for(int j=array.length-1;j>0;j--){
-                array[j]=array[j-1];
-            }
+            double temp=array[shift % array.length];
+            for(int j=0;j<array.length;j--){
+                array[(shift+j)%array.length]=array[j];
             array[0]=temp;
         }
     }
